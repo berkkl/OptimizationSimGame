@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class ObjectInteraction : MonoBehaviour
 {
+	
+	[SerializeField] public UI uiController;
+	private Factory _selectedFactory;
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
 	// Update is called once per frame
 	void Update()
@@ -22,8 +21,9 @@ public class ObjectInteraction : MonoBehaviour
 			{
 				if (hit.collider.CompareTag("Interactable"))
 				{
+					_selectedFactory = hit.collider.gameObject.GetComponent<Factory>();
 					//TODO: Interaction
-					Interact(hit.collider.gameObject);
+					FactoryInteraction();
 				}
 			}
 		}
@@ -35,17 +35,20 @@ public class ObjectInteraction : MonoBehaviour
 			{
 				if(collider.gameObject.layer == 8)
 				{
+					_selectedFactory = collider.gameObject.GetComponent<Factory>();
+					FactoryInteraction();
 					Debug.Log(collider.gameObject.name);
 				}
 			}
 		}	
-	}
 
-	public void Interact(GameObject interactionObject)
-	{
-		Debug.Log("Interacted");
-	}
+		void FactoryInteraction()
+		{
+			uiController.OpenFactoryPanel(_selectedFactory);
+			_selectedFactory.StartProduction();
+		}
 
+	}
 }
 
 
