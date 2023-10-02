@@ -308,3 +308,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7150da205ea15b4d8011a37c95d9e12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woodItem: {fileID: 11400000, guid: cbe4e0d60d872d243a7c3b3527ecb427, type: 2}
+  stoneItem: {fileID: 11400000, guid: 3ddc7f2c084f206409a34a918e9f82d8, type: 2}
+  _ui: {fileID: 0}

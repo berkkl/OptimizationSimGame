@@ -6,7 +6,36 @@ public class Inventory : MonoBehaviour
 	[SerializeField]
 	public Dictionary<Item, int> itemDictionary = new Dictionary<Item, int>();
 
-	private UI _ui;
+	[SerializeField] private Item woodItem;
+	[SerializeField] private Item stoneItem;
+
+	[SerializeField] private UI _ui; // Reference to the UI object
+
+	public UI UIComponent
+	{
+		get { return _ui; }
+		set { _ui = value; }
+	}
+
+	private void Start()
+	{
+		itemDictionary.Add(woodItem, 0);
+		itemDictionary.Add(stoneItem, 0);
+
+		if (_ui != null)
+		{
+			_ui.woodCount = GetItemCount(woodItem);
+			_ui.stoneCount = GetItemCount(stoneItem);
+		}
+		else
+		{
+			Debug.LogWarning("UI reference is not set in the Inventory.");
+		}
+
+		_ui.woodCount = GetItemCount(woodItem);
+		_ui.stoneCount = GetItemCount(stoneItem);
+
+	}
 
 	public void AddItem(Item item, int quantity = 1)
 	{
@@ -19,7 +48,8 @@ public class Inventory : MonoBehaviour
 			itemDictionary[item] = quantity;
 		}
 
-		_ui.woodCount = GetItemCount(item);
+		_ui.woodCount = GetItemCount(woodItem);
+		_ui.stoneCount = GetItemCount(stoneItem);
 	}
 
 	public void RemoveItem(Item item, int quantity = 1)

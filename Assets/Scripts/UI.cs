@@ -9,14 +9,16 @@ public class UI : MonoBehaviour
 	[SerializeField] public GameObject factoryPanel; //future we can make this a list, for each panel we can arrange an offset, and can open different panels
 
 	private Factory _selectedFactory;
-	private Inventory _inventory;
+	public Inventory _inventory;
 
 	[SerializeField] public TMP_Text factoryNameText;
 	[SerializeField] public TMP_Text factoryProductionMaterialText;
 	[SerializeField] public TMP_Text factoryProductionSpeedText;
 
 	public int woodCount;
+	public int stoneCount;
 	[SerializeField] public TMP_Text woodCountText;
+	[SerializeField] public TMP_Text stoneCountText;
 
 	const float updateTimeHolder = 0.05f;
 	private float updateTimer;
@@ -49,10 +51,10 @@ public class UI : MonoBehaviour
 				factoryProductionSpeedText.text = _selectedFactory.productionTimer.ToString("F2");
 			}
 
-			else 
-			{
-				woodCountText.text = $"Wood: {woodCount}";
-			}
+			woodCountText.text = $"Wood: {woodCount}";
+			stoneCountText.text = $"Stone: {stoneCount}";
+
+			updateTimer = updateTimeHolder;
 		}
 	}
 
