@@ -14,11 +14,9 @@ public class UI : MonoBehaviour
 	[SerializeField] public TMP_Text factoryNameText;
 	[SerializeField] public TMP_Text factoryProductionMaterialText;
 	[SerializeField] public TMP_Text factoryProductionSpeedText;
-
-	public int woodCount;
-	public int stoneCount;
 	[SerializeField] public TMP_Text woodCountText;
 	[SerializeField] public TMP_Text stoneCountText;
+	[SerializeField] public TMP_Text timberCountText;
 
 	const float updateTimeHolder = 0.05f;
 	private float updateTimer;
@@ -51,8 +49,9 @@ public class UI : MonoBehaviour
 				factoryProductionSpeedText.text = _selectedFactory.productionTimer.ToString("F2");
 			}
 
-			woodCountText.text = $"Wood: {woodCount}";
-			stoneCountText.text = $"Stone: {stoneCount}";
+			woodCountText.text = $"Wood: {_inventory.woodCount}";
+			stoneCountText.text = $"Stone: {_inventory.stoneCount}";
+			timberCountText.text = $"Timber: {_inventory.timberCount}";
 
 			updateTimer = updateTimeHolder;
 		}

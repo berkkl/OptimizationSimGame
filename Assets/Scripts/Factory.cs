@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class Factory : MonoBehaviour
 {
@@ -23,13 +24,40 @@ public class Factory : MonoBehaviour
 
 	public void StartProduction()
 	{
-		
-		_isProducing = true;
-		productionTimer -= Time.deltaTime;
-		if (productionTimer <= 0)
+		if(productionItem == inventory.timberItem)
 		{
-			productionTimer = _productionTimerHolder;
-			ProduceItem(productionItem);
+			//timber production
+			if (inventory.woodCount > 0)
+			{
+				if (!_isProducing)
+				{
+					//if I have only 1 wood, then it doesn't remove?
+					inventory.RemoveItem(inventory.woodItem);
+				}
+				_isProducing = true;
+				productionTimer -= Time.deltaTime;
+				if (productionTimer <= 0)
+				{
+					productionTimer = _productionTimerHolder;
+					ProduceItem(productionItem);
+				}
+			}
+			//add else if for other productions with prerequisite items
+			else
+			{
+				Debug.Log("yeterli odun yok");
+			}
+
+		}
+		else
+		{
+			_isProducing = true;
+			productionTimer -= Time.deltaTime;
+			if (productionTimer <= 0)
+			{
+				productionTimer = _productionTimerHolder;
+				ProduceItem(productionItem);
+			}
 		}
 	}
 
