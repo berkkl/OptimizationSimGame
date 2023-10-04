@@ -14,10 +14,11 @@ GameObject:
   - component: {fileID: 821651274250714435}
   - component: {fileID: 6591545037654400810}
   - component: {fileID: 5703904607406044265}
+  - component: {fileID: 5420537940405145387}
   m_Layer: 8
   m_Name: Stone
-  m_TagString: Interactable
-  m_Icon: {fileID: 0}
+  m_TagString: Factory
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8485833414811021564}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.2431, y: 0.643, z: -11}
   m_LocalScale: {x: 1.9623584, y: 1.2860581, z: 1}
   m_ConstrainProportionsScale: 0
@@ -134,3 +135,30 @@ MonoBehaviour:
   productionItem: {fileID: 11400000, guid: 3ddc7f2c084f206409a34a918e9f82d8, type: 2}
   productionTimer: 0
   inventory: {fileID: 0}
+--- !u!54 &5420537940405145387
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8485833414811021564}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0

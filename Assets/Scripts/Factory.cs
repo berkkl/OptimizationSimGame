@@ -40,6 +40,10 @@ public class Factory : MonoBehaviour
 		
 	}
 
+	//TODO: We can make this structure more generic with determining required items for each item
+	// For example if we now wood is a prerequisite of timber, we can only use one method and
+	// use item.requiredItem instead of inventory.woodItem
+
 	private void TimberProduction(Item item, int requiredAmount = 1)
 	{
 		//timber production

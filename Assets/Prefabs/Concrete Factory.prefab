@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6625682222140509834}
   m_Layer: 8
   m_Name: Concrete Factory
-  m_TagString: Interactable
+  m_TagString: Factory
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,9 +30,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9058615361176060529}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.2431, y: 0.643, z: -11}
-  m_LocalScale: {x: 1.9623584, y: 1.2860581, z: 1}
+  m_LocalScale: {x: 3, y: 1, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a120ec8f3a8e9ab42a6ec7706d51d460, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  productionItem: {fileID: 11400000, guid: 3ddc7f2c084f206409a34a918e9f82d8, type: 2}
+  productionItem: {fileID: 11400000, guid: a49bd9b6289701442b1ba6345c9f8140, type: 2}
   productionTimer: 0
   inventory: {fileID: 0}
 --- !u!54 &6625682222140509834

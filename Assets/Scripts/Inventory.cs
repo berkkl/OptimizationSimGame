@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
 	[SerializeField]
 	public Dictionary<Item, int> itemDictionary = new Dictionary<Item, int>();
-
+	
 	[SerializeField] public Item woodItem;
 	[SerializeField] public Item stoneItem;
 	[SerializeField] public Item concreteItem;
