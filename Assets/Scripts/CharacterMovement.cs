@@ -23,15 +23,16 @@ public class CharacterMovement : MonoBehaviour
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			Debug.Log("Clicked");
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			RaycastHit hit;
 
 			if (Physics.Raycast(ray, out hit))
 			{
-				Debug.Log("Raycast hit");
-
-				MoveToPosition(hit.point);
+				if(hit.collider.gameObject != null)
+				{
+					Debug.Log($"collider?: {hit.collider.gameObject.name}");
+					MoveToPosition(hit.point);
+				}
 			}
 		}
 

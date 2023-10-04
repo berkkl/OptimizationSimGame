@@ -64,11 +64,7 @@ public class Inventory : MonoBehaviour
 	{
 		if (itemDictionary.ContainsKey(item))
 		{
-			itemDictionary[item] -= quantity;
-			if (itemDictionary[item] <= 0)
-			{
-				itemDictionary.Remove(item);
-			}
+			if (itemDictionary[item] > 0) itemDictionary[item] -= quantity;
 		}
 		GetItemCounts();
 	}

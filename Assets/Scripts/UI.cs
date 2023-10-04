@@ -92,7 +92,7 @@ public class UI : MonoBehaviour
 				}
 				else
 				{
-					cityRequiredItem1.enabled = false;
+					cityRequiredItem1.gameObject.SetActive(false);
 				}
 				#endregion wood ui update
 				#region stone ui update
@@ -102,7 +102,7 @@ public class UI : MonoBehaviour
 				}
 				else
 				{
-					cityRequiredItem2.enabled = false;
+					cityRequiredItem2.gameObject.SetActive(false);
 				}
 				#endregion stone ui update
 				#region  timber ui update
@@ -112,7 +112,7 @@ public class UI : MonoBehaviour
 				}
 				else
 				{
-					cityRequiredItem3.enabled = false;
+					cityRequiredItem3.gameObject.SetActive(false);
 				}
 				#endregion timber ui update
 				#region concrete ui update
@@ -122,7 +122,7 @@ public class UI : MonoBehaviour
 				}
 				else
 				{
-					cityRequiredItem4.enabled = false;
+					cityRequiredItem4.gameObject.SetActive(false);
 				}
 				#endregion concrete ui update
 			}
