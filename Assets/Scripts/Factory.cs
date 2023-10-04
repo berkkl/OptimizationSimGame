@@ -7,15 +7,14 @@ public class Factory : MonoBehaviour
 {
 	public Item productionItem; // Assign the specific item to produce in the Inspector
 	public float productionTimer;
-	private float _productionTimerHolder;
+	[SerializeField] private float _productionTimerHolder = 5f;
 	private bool _isProducing;
 	private bool _hasEnoughFuel;
 	public Inventory inventory;
 
 	private void Start()
 	{
-		productionTimer = 5f;
-		_productionTimerHolder = productionTimer;
+		productionTimer = _productionTimerHolder;
 		_isProducing = false;
 		_hasEnoughFuel = false;
 	}

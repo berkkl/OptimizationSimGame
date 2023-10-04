@@ -847,6 +847,10 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1979563440}
+    - target: {fileID: 1764888590478776298, guid: d5c542099bf0e6d41a37aed16cdca57f, type: 3}
+      propertyPath: _productionTimerHolder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2165682728079856610, guid: d5c542099bf0e6d41a37aed16cdca57f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.98
@@ -4410,6 +4414,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4483854228609879110, guid: 3091927e161c68241b521c802b1f8337, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4483854228609879110, guid: 3091927e161c68241b521c802b1f8337, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 511023383}
@@ -4448,6 +4456,10 @@ PrefabInstance:
     - target: {fileID: 6911204228215506146, guid: 3091927e161c68241b521c802b1f8337, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251740710555072353, guid: 3091927e161c68241b521c802b1f8337, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
