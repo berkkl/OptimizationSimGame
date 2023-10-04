@@ -16,10 +16,12 @@ public class UI : MonoBehaviour
 	[SerializeField] public TMP_Text factoryProductionSpeedText;
 	[SerializeField] public TMP_Text woodCountText;
 	[SerializeField] public TMP_Text stoneCountText;
+	[SerializeField] public TMP_Text concreteCountText;
 	[SerializeField] public TMP_Text timberCountText;
 
 	const float updateTimeHolder = 0.05f;
 	private float updateTimer;
+
 
 	private void Start()
 	{
@@ -51,6 +53,7 @@ public class UI : MonoBehaviour
 
 			woodCountText.text = $"Wood: {_inventory.woodCount}";
 			stoneCountText.text = $"Stone: {_inventory.stoneCount}";
+			concreteCountText.text = $"Stone: {_inventory.concreteCount}";
 			timberCountText.text = $"Timber: {_inventory.timberCount}";
 
 			updateTimer = updateTimeHolder;

@@ -9,6 +9,7 @@ public class Factory : MonoBehaviour
 	public float productionTimer;
 	private float _productionTimerHolder;
 	private bool _isProducing;
+	private bool _hasEnoughFuel;
 	public Inventory inventory;
 
 	private void Start()
@@ -16,6 +17,7 @@ public class Factory : MonoBehaviour
 		productionTimer = 5f;
 		_productionTimerHolder = productionTimer;
 		_isProducing = false;
+		_hasEnoughFuel = false;
 	}
 	private void Update()
 	{
@@ -26,27 +28,60 @@ public class Factory : MonoBehaviour
 	{
 		if(productionItem == inventory.timberItem)
 		{
-			//timber production
-			if (inventory.woodCount > 0)
-			{
-				if (!_isProducing)
-				{
-					//if I have only 1 wood, then it doesn't remove?
-					inventory.RemoveItem(inventory.woodItem);
-				}
-				ProductionSequence();
-			}
-			//add else if for other productions with prerequisite items
-			else
-			{
-				Debug.Log("yeterli odun yok");
-			}
-
+			TimberProduction(inventory.timberItem, 1);
+		}
+		else if(productionItem == inventory.concreteItem){
+			ConcreteProduction(inventory.concreteItem, 2);
 		}
 		else
 		{
 			ProductionSequence();
 		}
+		
+	}
+
+	private void TimberProduction(Item item, int requiredAmount = 1)
+	{
+		//timber production
+		if (inventory.woodCount >= requiredAmount)
+		{
+			if (!_hasEnoughFuel)
+			{
+				inventory.RemoveItem(inventory.woodItem, requiredAmount);
+				_hasEnoughFuel = true;
+			}
+		}
+		if (_hasEnoughFuel)
+		{
+			ProductionSequence();
+		}
+		else
+		{
+			Debug.Log("yeterli odun yok");
+		}
+
+	}
+
+	private void ConcreteProduction(Item item, int requiredAmount = 1)
+	{
+		//timber production
+		if (inventory.stoneCount >= requiredAmount)
+		{
+			if (!_hasEnoughFuel)
+			{
+				inventory.RemoveItem(inventory.stoneItem, requiredAmount);
+				_hasEnoughFuel = true;
+			}
+		}
+		if (_hasEnoughFuel)
+		{
+			ProductionSequence();
+		}
+		else
+		{
+			Debug.Log("yeterli tas yok");
+		}
+
 	}
 
 	private void ProductionSequence()
@@ -57,6 +92,7 @@ public class Factory : MonoBehaviour
 		{
 			productionTimer = _productionTimerHolder;
 			ProduceItem(productionItem);
+			_hasEnoughFuel = false;
 			StartProduction();
 		}
 	}
