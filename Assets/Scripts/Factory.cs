@@ -34,13 +34,7 @@ public class Factory : MonoBehaviour
 					//if I have only 1 wood, then it doesn't remove?
 					inventory.RemoveItem(inventory.woodItem);
 				}
-				_isProducing = true;
-				productionTimer -= Time.deltaTime;
-				if (productionTimer <= 0)
-				{
-					productionTimer = _productionTimerHolder;
-					ProduceItem(productionItem);
-				}
+				ProductionSequence();
 			}
 			//add else if for other productions with prerequisite items
 			else
@@ -51,13 +45,19 @@ public class Factory : MonoBehaviour
 		}
 		else
 		{
-			_isProducing = true;
-			productionTimer -= Time.deltaTime;
-			if (productionTimer <= 0)
-			{
-				productionTimer = _productionTimerHolder;
-				ProduceItem(productionItem);
-			}
+			ProductionSequence();
+		}
+	}
+
+	private void ProductionSequence()
+	{
+		_isProducing = true;
+		productionTimer -= Time.deltaTime;
+		if (productionTimer <= 0)
+		{
+			productionTimer = _productionTimerHolder;
+			ProduceItem(productionItem);
+			StartProduction();
 		}
 	}
 
