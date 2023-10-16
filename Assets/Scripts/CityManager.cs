@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using AYellowpaper.SerializedCollections;
 
 public class CityManager : MonoBehaviour
 {
 	private float updateTimer;
 	[SerializeField] private float updateTimerHolder = 0.1f;
 	[SerializeField] private Inventory _playerInventory;
-	public Dictionary<CityController, Dictionary<Item, int>> cities = new Dictionary<CityController, Dictionary<Item, int>>();
+
+	[SerializedDictionary("City Name", "Item")]
+	public SerializedDictionary<CityController, SerializedDictionary<Item, int>> cities = new SerializedDictionary<CityController, SerializedDictionary<Item, int>>();
 	private CityController _selectedCity;
 
 	
@@ -21,7 +24,7 @@ public class CityManager : MonoBehaviour
 			CityController curCity = myTransform.GetChild(i).GetComponent<CityController>();
 			if (!cities.ContainsKey(curCity))
 			{
-				cities[curCity] = new Dictionary<Item, int>();
+				cities[curCity] = new SerializedDictionary<Item, int>();
 			}
 
 		}

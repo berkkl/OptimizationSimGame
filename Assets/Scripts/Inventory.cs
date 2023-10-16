@@ -1,11 +1,12 @@
+using AYellowpaper.SerializedCollections;
 using System.Collections.Generic;
 using Unity.Properties;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-	[SerializeField]
-	public Dictionary<Item, int> itemDictionary = new Dictionary<Item, int>();
+	[SerializedDictionary("Item Name", "Count")]
+	public SerializedDictionary<Item, int> itemDictionary = new SerializedDictionary<Item, int>();
 	
 	[SerializeField] public Item woodItem;
 	[SerializeField] public Item stoneItem;
