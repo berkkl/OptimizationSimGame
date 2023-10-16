@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-using Text = UnityEngine.UI.Text;
 
 
 namespace TMPro.Examples
